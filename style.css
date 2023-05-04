@@ -1,0 +1,88 @@
+* {
+  outline: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+.container-v1 {
+  padding: 0px 250px;
+}
+
+.container .row div {
+  overflow: hidden;
+  display: block;
+  justify-content: space-between;
+}
+.image-container img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.image-container {
+  position: relative;
+}
+.image-container .image-Overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 253, 253, 0.6);
+  color: #fff;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+.image-container .image-Overlay:hover {
+  opacity: 1;
+}
+.image-container .image-Overlay a {
+  color: #080808;
+  background-color: transparent;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  position: relative;
+}
+
+.image-container .image-Overlay a:hover {
+  color: #fff;
+}
+.image-container .image-Overlay a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  transition: all 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 0.4, 0.4, 0.7);
+  transform: scaleX(0);
+}
+.image-container .image-Overlay a:hover::before {
+  transform: scaleX(1);
+}
+@media (max-width: 480px) {
+  .container-v1 {
+    padding: 0px 10px;
+  }
+}
+@media (min-width: 768px) {
+  .container-v1 {
+    padding: 0px 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-v1 {
+    padding: 0px 20px;
+  }
+}
